@@ -1,6 +1,6 @@
 {
   "name": "@elora-cloud/elora-unplugin-vue-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "unplugin-vue-components for elora",
   "private": false,
   "type": "module",
