@@ -1,0 +1,13 @@
+*.vue
+*.js
+*.ts
+*.json
+*.css
+**.md
+
+node_modules
+types
+tests
+docs
+es
+lib
