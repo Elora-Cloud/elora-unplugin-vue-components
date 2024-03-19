@@ -4,9 +4,9 @@
 
 扩展了 [element-plus](https://github.com/element-plus/element-plus)的内置解析器`ElementPlusResolver`,因为[@elora-cloud/elora-plus](https://github.com/Elora-Cloud/elora-cloud/packages/elora-plus)对 [element-plus](https://github.com/element-plus/element-plus)一些组件的样式进行了修改，所以在按需加载时除了需要加载element-plus的组件内的样式同时也需要加载@elora-cloud/elora-plus组件内修改的样式
 
-[github](https://github.com/Elora-Cloud/elora-cloud/packages/elora-unplugin-vue-components)地址
+[github](https://github.com/Elora-Cloud/elora-unplugin-vue-components)地址
 
-[gitee](https://gitee.com/mumulx/elora-plus/tree/master/packages/elora-unplugin-vue-components)地址
+[gitee](https://gitee.com/Elora-Cloud/elora-unplugin-vue-components)地址
 
 ## 开始
 
