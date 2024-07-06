@@ -99,7 +99,7 @@ function resolveDirective(name: string, options: EloraPlusResolverOptionsResolve
   };
 }
 
-const noStylesComponents: string[] = ['EloraAnchorGroup', 'EloraTinymceEditor', 'EloraInputNumber'];
+const noStylesComponents: string[] = ['EloraAnchorGroup', 'EloraTinymceEditor', 'EloraInputNumber', 'EloraInputOption'];
 
 /**
  * Resolver for Element Plus
