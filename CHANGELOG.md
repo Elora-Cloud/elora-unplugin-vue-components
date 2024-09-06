@@ -1,6 +1,6 @@
-### [v1.0.4](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/...v1.0.4)
+### [v1.0.5](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/...v1.0.5)
 
-`2024-08-06`
+`2024-09-06`
 
 **Bug Fixes**
 
@@ -10,6 +10,7 @@
 **Feature**
 
 - 初始化项目 [e0947134](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/e0947134f86a2e64041cdd4e96762e4d068a2a6f)
+- 升级最新依赖 [ad5682f6](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/ad5682f647536f7ba8ba2ea9ffde1d7df9540bef)
 
 **release**
 
