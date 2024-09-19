@@ -1,4 +1,11 @@
-### [v1.0.5](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/...v1.0.5)
+### [v1.0.6](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.5...v1.0.6)
+
+`2024-09-19`
+
+**Feature**
+
+- 升级最新依赖,更换eslint配置 [fc876aa7](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/fc876aa7eb3d875a49908a5b4a61ef0f81857450)
+### [v1.0.5](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/e0947134f86a2e64041cdd4e96762e4d068a2a6f...v1.0.5)
 
 `2024-09-06`
 
@@ -16,3 +23,4 @@
 
 - 1.0.3 [eabafd5b](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/eabafd5bc7e67ec2419e4071b08af4e0d7edf31c)
 - 1.0.4 [dae18999](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/dae189994e8eeae665f38d7400fd5d78437c2600)
+- 1.0.5 [7fd14914](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/7fd14914eb4dbb1b31949a401422323da88e686a)
