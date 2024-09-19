@@ -5,22 +5,22 @@ module.exports = {
     'rule-empty-line-before': [
       'always',
       {
-        ignore: ['after-comment', 'first-nested']
-      }
+        ignore: ['after-comment', 'first-nested'],
+      },
     ],
     'selector-class-pattern': null,
     'scss/no-global-function-names': null,
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global', 'input-placeholder', 'deep']
-      }
+        ignorePseudoClasses: ['global', 'input-placeholder', 'deep'],
+      },
     ],
     'selector-pseudo-element-no-unknown': [
       true,
       {
-        ignorePseudoElements: ['v-deep']
-      }
+        ignorePseudoElements: ['v-deep'],
+      },
     ],
     'no-empty-source': null,
     // todo
@@ -33,9 +33,9 @@ module.exports = {
     'keyframes-name-pattern': [
       '^([a-z][a-z0-9]*|slideInRight|slideInLeft)(-[a-z0-9]+)*$',
       {
-        message: (name) => `Expected keyframe name "${name}" to be kebab-case`
-      }
-    ]
+        message: name => `Expected keyframe name "${name}" to be kebab-case`,
+      },
+    ],
   },
-  ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.html']
+  ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.html'],
 };

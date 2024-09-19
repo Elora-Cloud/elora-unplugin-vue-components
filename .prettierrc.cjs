@@ -42,5 +42,5 @@ module.exports = {
   // 然而在 Linux 和 Unix 中只使用简单的换行分隔符 (LF)。
   // 对应的控制字符为 "\n" (LF) 和 "\r\n"(CRLF)。auto意为保持现有的行尾
   // 换行符使用 lf 结尾是 可选值"<auto|lf|crlf|cr>"
-  endOfLine: 'auto'
+  endOfLine: 'auto',
 };

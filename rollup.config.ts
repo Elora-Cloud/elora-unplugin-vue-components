@@ -1,6 +1,6 @@
 import { defineConfig } from 'rollup';
-import typescript2 from 'rollup-plugin-typescript2';
 import dts from 'rollup-plugin-dts';
+import typescript2 from 'rollup-plugin-typescript2';
 
 export default defineConfig([
   {
@@ -12,17 +12,17 @@ export default defineConfig([
         format: 'esm',
         dir: 'es',
         preserveModules: true,
-        preserveModulesRoot: 'src'
+        preserveModulesRoot: 'src',
       },
       {
         format: 'cjs',
         dir: 'lib',
         preserveModules: true,
         preserveModulesRoot: 'src',
-        interop: 'compat'
-      }
+        interop: 'compat',
+      },
     ],
-    plugins: [dts()]
+    plugins: [dts()],
   },
   {
     input: ['src/index.ts'],
@@ -33,24 +33,24 @@ export default defineConfig([
         dir: 'es',
         entryFileNames: '[name].mjs',
         preserveModules: true,
-        preserveModulesRoot: 'src'
+        preserveModulesRoot: 'src',
       },
       {
         format: 'cjs',
         dir: 'lib',
         entryFileNames: '[name].cjs',
         preserveModules: true,
-        preserveModulesRoot: 'src'
-      }
+        preserveModulesRoot: 'src',
+      },
     ],
     plugins: [
       typescript2({
         tsconfigOverride: {
           compilerOptions: {
-            declaration: false
-          }
-        }
-      })
-    ]
-  }
+            declaration: false,
+          },
+        },
+      }),
+    ],
+  },
 ]);

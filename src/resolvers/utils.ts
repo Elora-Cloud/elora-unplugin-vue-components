@@ -13,7 +13,8 @@ export async function getPkgVersion(pkgName: string, defaultVersion: string): Pr
     }
 
     return defaultVersion;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     return defaultVersion;
   }

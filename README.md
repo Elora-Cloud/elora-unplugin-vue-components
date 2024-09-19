@@ -17,10 +17,10 @@ pnpm add -D @elora-cloud/elora-unplugin-vue-components
 自动导入组件和样式文件，最终的结果为：
 
 ```js
-import { ElCheckbox } from "element-plus/es";
-import "element-plus/es/components/base/style/css";
-import "element-plus/es/components/checkbox/style/css";
-import "@elora-cloud/elora-plus/theme/styles/checkbox.css";
+import { ElCheckbox } from 'element-plus/es';
+import 'element-plus/es/components/base/style/css';
+import 'element-plus/es/components/checkbox/style/css';
+import '@elora-cloud/elora-plus/theme/styles/checkbox.css';
 ```
 
 ## 配置
@@ -46,7 +46,7 @@ import { EloraPlusResolver, ElementPlusResolver } from '@elora-cloud/elora-unplu
         ...
         Components({
             resolvers: [
-              ElementPlusResolver(), 
+              ElementPlusResolver(),
               EloraPlusResolver()
             ]
           }),
@@ -59,4 +59,3 @@ import { EloraPlusResolver, ElementPlusResolver } from '@elora-cloud/elora-unplu
     ]
 }
 ```
-

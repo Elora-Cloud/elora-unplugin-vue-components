@@ -7,29 +7,29 @@ export interface EloraPlusResolverOptions {
    *
    * @default 'css'
    */
-  importStyle?: boolean | 'css' | 'sass';
+  importStyle?: boolean | 'css' | 'sass'
 
   /**
    * use commonjs lib & source css or scss for ssr
    */
-  ssr?: boolean;
+  ssr?: boolean
 
   /**
    * auto import for directives
    *
    * @default true
    */
-  directives?: boolean;
+  directives?: boolean
 
   /**
    * exclude component name, if match do not resolve the name
    */
-  exclude?: RegExp;
+  exclude?: RegExp
 
   /**
    * a list of component names that have no styles, so resolving their styles file should be prevented
    */
-  noStylesComponents?: string[];
+  noStylesComponents?: string[]
 }
 
 type EloraPlusResolverOptionsResolved = Required<Omit<EloraPlusResolverOptions, 'exclude'>> & Pick<EloraPlusResolverOptions, 'exclude'>;
@@ -48,13 +48,15 @@ function getSideEffects(libName: string, dirName: string, options: EloraPlusReso
 }
 
 function resolveComponent(name: string, options: EloraPlusResolverOptionsResolved): ComponentInfo | undefined {
-  if (options.exclude && name.match(options.exclude)) return;
+  if (options.exclude && name.match(options.exclude))
+    return;
 
-  if (!name.match(/^Elora[A-Z]/)) return;
+  if (!name.match(/^Elora[A-Z]/))
+    return;
   if (name.match(/^EloraIcon.+/)) {
     return {
       name: name.replace(/^EloraIcon/, ''),
-      from: '@elora-cloud/elora-plus-icons-vue'
+      from: '@elora-cloud/elora-plus-icons-vue',
     };
   }
   const partialName = kebabCase(name.slice(5)); // ElTableColumn -> table-column
@@ -67,14 +69,15 @@ function resolveComponent(name: string, options: EloraPlusResolverOptionsResolve
   return {
     name,
     from: `${libName}/${ssr ? 'lib' : 'es'}`,
-    sideEffects: getSideEffects(libName, partialName, options)
+    sideEffects: getSideEffects(libName, partialName, options),
   };
 }
 
 function resolveDirective(name: string, options: EloraPlusResolverOptionsResolved): ComponentInfo | undefined {
-  if (!options.directives) return;
+  if (!options.directives)
+    return;
 
-  const directives: Record<string, { importName: string; styleName: string }> = {
+  const directives: Record<string, { importName: string, styleName: string }> = {
     Draggable: { importName: 'EloraDraggable', styleName: 'loading' },
     Outside: { importName: 'EloraOutside', styleName: 'loading' },
     Resize: { importName: 'EloraResize', styleName: 'loading' },
@@ -85,16 +88,17 @@ function resolveDirective(name: string, options: EloraPlusResolverOptionsResolve
     BtnAcl: { importName: 'EloraBtnAcl', styleName: 'popover' },
     BtnWaiting: { importName: 'EloraBtnWaiting', styleName: 'popover' },
     HasPermi: { importName: 'EloraHasPermi', styleName: 'popover' },
-    HasRoles: { importName: 'EloraHasRoles', styleName: 'infinite-scroll' }
+    HasRoles: { importName: 'EloraHasRoles', styleName: 'infinite-scroll' },
   };
 
   const directive = directives[name];
-  if (!directive) return;
+  if (!directive)
+    return;
 
   const { ssr } = options;
   return {
     name: directive.importName,
-    from: `@elora-cloud/elora-plus/${ssr ? 'lib' : 'es'}`
+    from: `@elora-cloud/elora-plus/${ssr ? 'lib' : 'es'}`,
     // sideEffects: getSideEffects(directive.styleName, options)
   };
 }
@@ -115,14 +119,15 @@ export function EloraPlusResolver(options: EloraPlusResolverOptions = {}): Compo
   let optionsResolved: EloraPlusResolverOptionsResolved;
 
   async function resolveOptions() {
-    if (optionsResolved) return optionsResolved;
+    if (optionsResolved)
+      return optionsResolved;
     optionsResolved = {
       ssr: false,
       importStyle: 'css',
       directives: true,
       exclude: undefined,
       noStylesComponents: options.noStylesComponents || [],
-      ...options
+      ...options,
     };
     return optionsResolved;
   }
@@ -133,15 +138,16 @@ export function EloraPlusResolver(options: EloraPlusResolverOptions = {}): Compo
       resolve: async (name: string) => {
         const options = await resolveOptions();
 
-        if ([...options.noStylesComponents, ...noStylesComponents].includes(name)) return resolveComponent(name, { ...options, importStyle: false });
+        if ([...options.noStylesComponents, ...noStylesComponents].includes(name))
+          return resolveComponent(name, { ...options, importStyle: false });
         return resolveComponent(name, options);
-      }
+      },
     },
     {
       type: 'directive',
       resolve: async (name: string) => {
         return resolveDirective(name, await resolveOptions());
-      }
-    }
+      },
+    },
   ];
 }

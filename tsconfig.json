@@ -1,25 +1,25 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "composite": false,
     "target": "ESNext",
+    "lib": ["ESNext"],
     "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "node",
-    "isolatedModules": true,
-    "declaration": true,
-    "declarationDir": "./types", // 声明文件输出目录
+    "resolveJsonModule": true, // 声明文件输出目录
     "strict": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "lib": ["ESNext"],
-    "composite": false,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
     /* Linting */
 
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "noEmit": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "rollup.config.ts"]
 }

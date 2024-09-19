@@ -1,9 +1,10 @@
-import { compare } from 'compare-versions';
 import type { ComponentInfo, ComponentResolver, SideEffectsInfo } from 'unplugin-vue-components/types';
+import { compare } from 'compare-versions';
 import { getPkgVersion, kebabCase } from './utils';
 
 const eloraPackageName = '@elora-cloud/elora-plus/theme';
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const noEloraStyleComs: string[] = [];
 export interface ElementPlusResolverOptions {
   /**
@@ -11,41 +12,41 @@ export interface ElementPlusResolverOptions {
    *
    * @default 'css'
    */
-  importStyle?: boolean | 'css' | 'sass';
+  importStyle?: boolean | 'css' | 'sass'
 
   /**
    * use commonjs lib & source css or scss for ssr
    */
-  ssr?: boolean;
+  ssr?: boolean
 
   /**
    * specify element-plus version to load style
    *
    * @default installed version
    */
-  version?: string;
+  version?: string
 
   /**
    * auto import for directives
    *
    * @default true
    */
-  directives?: boolean;
+  directives?: boolean
 
   /**
    * exclude component name, if match do not resolve the name
    */
-  exclude?: RegExp;
+  exclude?: RegExp
 
   /**
    * a list of component names that have no styles, so resolving their styles file should be prevented
    */
-  noStylesComponents?: string[];
+  noStylesComponents?: string[]
 
   /**
    * nightly version
    */
-  nightly?: boolean;
+  nightly?: boolean
 }
 
 type ElementPlusResolverOptionsResolved = Required<Omit<ElementPlusResolverOptions, 'exclude'>> & Pick<ElementPlusResolverOptions, 'exclude'>;
@@ -57,7 +58,8 @@ type ElementPlusResolverOptionsResolved = Required<Omit<ElementPlusResolverOptio
  */
 function getSideEffectsLegacy(partialName: string, options: ElementPlusResolverOptionsResolved): SideEffectsInfo | undefined {
   const { importStyle } = options;
-  if (!importStyle) return;
+  if (!importStyle)
+    return;
 
   if (importStyle === 'sass') {
     return ['element-plus/packages/theme-chalk/src/base.scss', `element-plus/packages/theme-chalk/src/${partialName}.scss`];
@@ -85,14 +87,16 @@ function getSideEffects(dirName: string, options: ElementPlusResolverOptionsReso
 }
 
 function resolveComponent(name: string, options: ElementPlusResolverOptionsResolved): ComponentInfo | undefined {
-  if (options.exclude && name.match(options.exclude)) return;
+  if (options.exclude && name.match(options.exclude))
+    return;
 
-  if (!name.match(/^El[A-Z]/)) return;
+  if (!name.match(/^El[A-Z]/))
+    return;
 
   if (name.match(/^ElIcon.+/)) {
     return {
       name: name.replace(/^ElIcon/, ''),
-      from: '@element-plus/icons-vue'
+      from: '@element-plus/icons-vue',
     };
   }
 
@@ -104,35 +108,37 @@ function resolveComponent(name: string, options: ElementPlusResolverOptionsResol
     return {
       name,
       from: `${nightly ? '@element-plus/nightly' : 'element-plus'}/${ssr ? 'lib' : 'es'}`,
-      sideEffects: getSideEffects(partialName, options)
+      sideEffects: getSideEffects(partialName, options),
     };
   }
   // >=1.0.2-beta.28
   if (compare(version, '1.0.2-beta.28', '>=')) {
     return {
       from: `element-plus/es/el-${partialName}`,
-      sideEffects: getSideEffectsLegacy(partialName, options)
+      sideEffects: getSideEffectsLegacy(partialName, options),
     };
   }
   // for <=1.0.1
 
   return {
     from: `element-plus/lib/el-${partialName}`,
-    sideEffects: getSideEffectsLegacy(partialName, options)
+    sideEffects: getSideEffectsLegacy(partialName, options),
   };
 }
 
 function resolveDirective(name: string, options: ElementPlusResolverOptionsResolved): ComponentInfo | undefined {
-  if (!options.directives) return;
+  if (!options.directives)
+    return;
 
-  const directives: Record<string, { importName: string; styleName: string }> = {
+  const directives: Record<string, { importName: string, styleName: string }> = {
     Loading: { importName: 'ElLoadingDirective', styleName: 'loading' },
     Popover: { importName: 'ElPopoverDirective', styleName: 'popover' },
-    InfiniteScroll: { importName: 'ElInfiniteScroll', styleName: 'infinite-scroll' }
+    InfiniteScroll: { importName: 'ElInfiniteScroll', styleName: 'infinite-scroll' },
   };
 
   const directive = directives[name];
-  if (!directive) return;
+  if (!directive)
+    return;
 
   const { version, ssr, nightly } = options;
 
@@ -141,7 +147,7 @@ function resolveDirective(name: string, options: ElementPlusResolverOptionsResol
     return {
       name: directive.importName,
       from: `${nightly ? '@element-plus/nightly' : 'element-plus'}/${ssr ? 'lib' : 'es'}`,
-      sideEffects: getSideEffects(directive.styleName, options)
+      sideEffects: getSideEffects(directive.styleName, options),
     };
   }
 }
@@ -162,7 +168,8 @@ export function ElementPlusResolver(options: ElementPlusResolverOptions = {}): C
   let optionsResolved: ElementPlusResolverOptionsResolved;
 
   async function resolveOptions() {
-    if (optionsResolved) return optionsResolved;
+    if (optionsResolved)
+      return optionsResolved;
     optionsResolved = {
       ssr: false,
       version: await getPkgVersion('element-plus', '2.2.2'),
@@ -171,7 +178,7 @@ export function ElementPlusResolver(options: ElementPlusResolverOptions = {}): C
       exclude: undefined,
       noStylesComponents: options.noStylesComponents || [],
       nightly: false,
-      ...options
+      ...options,
     };
     return optionsResolved;
   }
@@ -182,15 +189,16 @@ export function ElementPlusResolver(options: ElementPlusResolverOptions = {}): C
       resolve: async (name: string) => {
         const options = await resolveOptions();
 
-        if ([...options.noStylesComponents, ...noStylesComponents].includes(name)) return resolveComponent(name, { ...options, importStyle: false });
+        if ([...options.noStylesComponents, ...noStylesComponents].includes(name))
+          return resolveComponent(name, { ...options, importStyle: false });
         return resolveComponent(name, options);
-      }
+      },
     },
     {
       type: 'directive',
       resolve: async (name: string) => {
         return resolveDirective(name, await resolveOptions());
-      }
-    }
+      },
+    },
   ];
 }
