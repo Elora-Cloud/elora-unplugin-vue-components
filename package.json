@@ -82,34 +82,34 @@
     "access": "public"
   },
   "peerDependencies": {
-    "unplugin-vue-components": "^0.27.4"
+    "unplugin-vue-components": "^0.27.5"
   },
   "dependencies": {
     "compare-versions": "^6.1.1",
-    "local-pkg": "^0.5.0",
-    "unplugin-vue-components": "^0.27.4"
+    "local-pkg": "^0.5.1",
+    "unplugin-vue-components": "^0.27.5"
   },
   "devDependencies": {
-    "@elora-cloud/elora-cli": "^1.0.4",
+    "@elora-cloud/elora-cli": "^1.0.7",
     "@elora-cloud/eslint-config": "^3.6.2",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/node": "^22.5.5",
-    "eslint": "^9.10.0",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.15.0",
     "fast-glob": "^3.3.2",
-    "husky": "^9.1.6",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "postcss-scss": "^4.0.9",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "rimraf": "^6.0.1",
-    "rollup": "^4.21.3",
+    "rollup": "^4.27.4",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-typescript2": "^0.36.0",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.10.0",
     "stylelint-config-recommended": "^14.0.1",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
-    "tsx": "^4.19.1",
-    "typescript": "^5.6.2"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue,sass}": "prettier --write",
