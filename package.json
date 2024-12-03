@@ -90,7 +90,7 @@
     "unplugin-vue-components": "^0.27.5"
   },
   "devDependencies": {
-    "@elora-cloud/elora-cli": "^1.0.8",
+    "@elora-cloud/elora-cli": "^1.0.9",
     "@elora-cloud/eslint-config": "^3.6.2",
     "@rollup/plugin-typescript": "^12.1.1",
     "@types/node": "^22.10.1",
