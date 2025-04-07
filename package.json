@@ -74,7 +74,7 @@
   "scripts": {
     "clean": "rimraf es lib",
     "changelog": "elora changelog",
-    "release": "elora release",
+    "release": "elora release --registry https://npm.pkg.github.com",
     "build": "pnpm run clean && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "prettier": "prettier --write .",
     "prepare": "husky install",
@@ -93,7 +93,7 @@
     "unplugin-vue-components": "^28.4.1"
   },
   "devDependencies": {
-    "@elora-cloud/elora-cli": "^1.0.11",
+    "@elora-cloud/elora-cli": "^1.0.13",
     "@elora-cloud/eslint-config": "^4.5.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/node": "^22.13.9",

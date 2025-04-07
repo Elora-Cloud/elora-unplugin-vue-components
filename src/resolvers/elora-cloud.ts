@@ -53,6 +53,8 @@ function resolveComponent(name: string, options: EloraPlusResolverOptionsResolve
 
   if (!name.match(/^Elora[A-Z]/))
     return;
+  if (name.match(/^EloraPlus[A-Z]/))
+    return;
   if (name.match(/^EloraIcon.+/)) {
     return {
       name: name.replace(/^EloraIcon/, ''),
