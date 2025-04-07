@@ -1,10 +1,12 @@
-### [v1.0.12](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.11...v1.0.12)
+### [v1.0.13](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.11...v1.0.13)
 
-`2025-03-07`
+`2025-04-07`
 
 **Feature**
 
-- 升级最新依赖,集成GitHub Packages [06b326e9](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/06b326e9da5529db49238739b0fb1ee0be39d0a0)
+- 更新依赖 [9c9e02cc](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/9c9e02cc7374a69073595607e0f98a1791451ec5)
+- 升级最新依赖,集成GitHub Packages [681f4aae](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/681f4aaeaed221d643eab500c127d37285771742)
+- 优化自动导入条件 [6fba567e](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/6fba567e03a939822a5cb50372c9e3d8917ace8b)
 ### [v1.0.11](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.10...v1.0.11)
 
 `2025-02-20`
