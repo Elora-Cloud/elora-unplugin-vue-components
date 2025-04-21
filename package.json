@@ -85,30 +85,30 @@
     "access": "public"
   },
   "peerDependencies": {
-    "unplugin-vue-components": "^28.4.0"
+    "unplugin-vue-components": "^28.5.0"
   },
   "dependencies": {
     "compare-versions": "^6.1.1",
     "local-pkg": "^1.1.1",
-    "unplugin-vue-components": "^28.4.1"
+    "unplugin-vue-components": "^28.5.0"
   },
   "devDependencies": {
-    "@elora-cloud/elora-cli": "^1.0.13",
-    "@elora-cloud/eslint-config": "^4.5.1",
+    "@elora-cloud/elora-cli": "^1.0.14",
+    "@elora-cloud/eslint-config": "^4.12.0",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@types/node": "^22.13.9",
-    "eslint": "^9.21.0",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.25.0",
     "fast-glob": "^3.3.3",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.1",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
-    "rollup": "^4.34.9",
-    "rollup-plugin-dts": "^6.1.1",
+    "rollup": "^4.40.0",
+    "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-typescript2": "^0.36.0",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue,sass}": "prettier --write",
