@@ -85,30 +85,30 @@
     "access": "public"
   },
   "peerDependencies": {
-    "unplugin-vue-components": "^28.5.0"
+    "unplugin-vue-components": "catalog:peer"
   },
   "dependencies": {
-    "compare-versions": "^6.1.1",
-    "local-pkg": "^1.1.2",
-    "unplugin-vue-components": "^30.0.0"
+    "compare-versions": "catalog:prod",
+    "local-pkg": "catalog:prod",
+    "unplugin-vue-components": "catalog:peer"
   },
   "devDependencies": {
-    "@elora-cloud/elora-cli": "^1.0.15",
-    "@elora-cloud/eslint-config": "^6.2.0",
-    "@rollup/plugin-typescript": "^12.3.0",
-    "@types/node": "^24.10.0",
-    "eslint": "^9.39.1",
-    "fast-glob": "^3.3.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
-    "postcss-scss": "^4.0.9",
-    "prettier": "^3.6.2",
-    "rimraf": "^6.1.0",
-    "rollup": "^4.52.5",
-    "rollup-plugin-dts": "^6.2.3",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "@elora-cloud/elora-cli": "catalog:dev",
+    "@elora-cloud/eslint-config": "catalog:dev",
+    "@rollup/plugin-typescript": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "eslint": "catalog:dev",
+    "fast-glob": "catalog:dev",
+    "husky": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "postcss-scss": "catalog:dev",
+    "prettier": "catalog:dev",
+    "rimraf": "catalog:dev",
+    "rollup": "catalog:dev",
+    "rollup-plugin-dts": "catalog:dev",
+    "rollup-plugin-typescript2": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev"
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue,sass}": "prettier --write",
