@@ -1,7 +1,7 @@
-### [v1.0.16](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.15...v1.0.16)
+### [v1.0.17](https://github.com/Elora-Cloud/elora-unplugin-vue-components/compare/v1.0.16...v1.0.17)
 
 `2025-11-04`
 
 **release**
 
-- 1.0.15 [8b565b66](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/8b565b66103417eb0b84697f77ef004a257a856a)
+- 1.0.16 [b48a250d](https://github.com/Elora-Cloud/elora-unplugin-vue-components/commit/b48a250d7619709f8d23003c01145928e5a073b0)
