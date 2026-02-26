@@ -91,6 +91,7 @@ function resolveDirective(name: string, options: EloraPlusResolverOptionsResolve
     BtnWaiting: { importName: 'EloraBtnWaiting', styleName: 'popover' },
     HasPermi: { importName: 'EloraHasPermi', styleName: 'popover' },
     HasRoles: { importName: 'EloraHasRoles', styleName: 'infinite-scroll' },
+    RepeatClick: { importName: 'EloraRepeatClick', styleName: 'popover' },
   };
 
   const directive = directives[name];
